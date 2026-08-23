@@ -5,3 +5,4 @@
 - [Pedantic naming](feedback_pedantic_naming.md) — verify a name is technically/historically accurate before using it, don't default to the colloquial first-guess
 - [Resources folder organization](feedback_resources_organization.md) — per-marking subfolders under resources/, cutting SVGs get a `-for-cutting` suffix
 - [Insignia cut-line method](feedback_insignia_cutline_method.md) — use Shapely boolean geometry (not raw outline overlay) to convert color-filled insignia SVGs to mask cut lines
+- [Tamiya masking cut settings](project_tamiya_masking_cut_settings.md) — Portrait 3 + AutoBlade: depth=2 (max), force=3, speed=1
