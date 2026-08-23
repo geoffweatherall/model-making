@@ -1,0 +1,7 @@
+- [Ask before pushing](feedback_ask_before_push.md) — never `git push` without asking, even after a commit was approved
+- [Model scale is 1/48](user_model_scale.md) — default to 1/48 kit/reference recommendations, next larger if unavailable
+- [Preview image conventions](feedback_comparison_images_show_dimensions.md) — dimension line, numbered vertices, legend below it, gray-dashed old vs green new
+- [Prefer real fonts over hand-built curves](feedback_prefer_real_fonts_over_handbuilt_curves.md) — check for a matching font before hand-designing curved letterform geometry
+- [Pedantic naming](feedback_pedantic_naming.md) — verify a name is technically/historically accurate before using it, don't default to the colloquial first-guess
+- [Resources folder organization](feedback_resources_organization.md) — per-marking subfolders under resources/, cutting SVGs get a `-for-cutting` suffix
+- [Insignia cut-line method](feedback_insignia_cutline_method.md) — use Shapely boolean geometry (not raw outline overlay) to convert color-filled insignia SVGs to mask cut lines

@@ -137,7 +137,8 @@ Any SVG meant to go to the cutter gets a `-for-cutting` suffix, styled
 `fill="none" stroke="#000000" stroke-width="0.1"`, to distinguish it from
 preview/comparison PNGs and older working files. Full rationale in the
 `feedback-resources-organization` and `feedback-comparison-images-show-dimensions`
-memory notes (auto-memory, not in this repo).
+memory notes (see `claude-memory/` in this repo's root — auto-memory is
+git-synced here, see the section below).
 
 **`masks/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg`** — one
 combined Silhouette-ready SVG with every E2-S marking laid out with gaps for
@@ -178,6 +179,44 @@ booted into Windows on the dual-boot machine (see the Windows-partition
 note below) — this Claude Code session only produces/edits the SVGs on the
 Ubuntu side. Nothing in this repo drives the cutter directly.
 
+## Claude Code memory syncing across machines (git-backed, 2026-08-23)
+
+Claude Code's auto-memory (preference/feedback notes it saves across
+sessions) normally lives at
+`~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory/` —
+tied to this session's working directory (the `model-masks-workspace`
+folder, launched one level above this repo), and **local to whichever
+machine wrote it**, not git-synced by default. Since the user works from
+this same workspace path on two Ubuntu machines that aren't always on
+simultaneously (so something like Syncthing doesn't fit well) and already
+syncs everything else via this repo's git remote, memory is synced the
+same way:
+
+- The actual memory files live in **`claude-memory/`** in this repo (i.e.
+  `model-masks/claude-memory/`), git-tracked like everything else.
+- `~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory`
+  is a **symlink** to that folder, not a real directory — so Claude's
+  memory tool reads/writes the repo files directly with no extra step.
+- **On a new/other machine**, after cloning this repo, recreate the
+  symlink (the target directory won't exist yet until Claude Code's
+  first run there creates the parent `projects/...` folder — create it
+  if needed):
+  ```
+  mkdir -p ~/.claude/projects/-home-geoff-Projects-model-masks-workspace
+  rm -rf ~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory   # only if it exists and is a real (non-symlink) dir - check first, don't blindly delete existing memory
+  ln -s /home/geoff/Projects/model-masks-workspace/model-masks/claude-memory \
+        ~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory
+  ```
+- This repo is **public** (see top of this file) — `claude-memory/`
+  content goes public with it. Nothing saved there so far is sensitive
+  (workflow preferences, not secrets), but keep that in mind before
+  saving anything there.
+- No automatic committing/pushing of memory changes — same "ask before
+  committing, always ask before pushing" rules apply as for the rest of
+  this repo (see the `feedback-ask-before-push` memory note itself). The
+  user asks for a sync the same deliberate way they ask for any other
+  commit/push.
+
 ## Setup checklist for a new machine (Claude: run this at the start of a
 ## session if things look uninitialized — no .venv, no fonts symlink, etc.)
 
@@ -193,3 +232,10 @@ Ubuntu side. Nothing in this repo drives the cutter directly.
    attempting sudo.
 5. Repo may have uncommitted changes carried over via git — check `git
    status` before assuming a clean tree.
+6. Claude memory symlink — check whether
+   `~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory`
+   is already a symlink to `claude-memory/` in this repo (`ls -la` on its
+   parent dir). If it's missing or is a real directory instead of a
+   symlink, see the "Claude Code memory syncing across machines" section
+   above and set it up — don't skip this, otherwise memory silently stops
+   being shared between machines and starts drifting per-machine again.
