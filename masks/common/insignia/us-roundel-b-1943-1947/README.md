@@ -37,3 +37,24 @@ Careful: Wikimedia Commons also hosts a plain **"Roundel of the USAF.svg"**
 — that one is the **post-1947** variant (red stripe, Amendment 2) and is
 the wrong file for WWII work. Only the one in this folder, with the
 1943–1947 date range in its title, is correct for this period.
+
+`us-roundel-b-1943-1947-for-cutting.svg` — derived from the file above for
+single-sheet paint masking: cut this once, then peel individual regions to
+spray each color in turn, leaving the rest of the mask in place — rather
+than cutting a separate mask per color layer. It's a single `<path>` whose
+lines are *only* the overall outer edge (background/navy) and actual color
+changes (navy/white) — computed as exact boolean geometry (Shapely) on the
+final flattened artwork: `(outer_disk ∪ outer_bar) − (white_bar − inner_disk)
+− star`, giving one outer boundary plus three holes (the two white
+bar-remainder pieces either side of the disk, and the star). Deliberately
+**not** built by just keeping each of the master file's 5 overlapping shapes'
+raw outlines — that leaves the bar/disk edges cutting straight through the
+middle of the star and other single-color regions, which is wrong for this
+technique. No enclosing margin rectangle baked in (cut lines should only be
+color changes and the outer edge — add any margin you want as a separate
+rectangle at use time). Has no inherent real-world size (same as the master
+file) — when embedding at a target width, scale by `target_width_mm / 1245`
+(1245 = the bar width in source units, the usual "how wide is this
+insignia" reference dimension) and recompute `stroke-width` for that scale
+so the cut line ends up a consistent real-world thickness (this project
+uses ~0.1mm).

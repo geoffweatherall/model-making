@@ -125,6 +125,59 @@ committing them into the *public* repo that must be avoided. Symlinking
 rather than copying means future additions to either `fonts-open/` or
 `fonts-proprietary/` are picked up with just another `fc-cache -f`.
 
+## Bottisham Four / E2-S — cut sheet work (as of 2026-08-23)
+
+Per-project `resources/` folders (e.g.
+`masks/projects/bottisham-four/E2-S/resources/`) are organized into one
+subfolder per decal/marking (`nose/`, `walkway/`, `E2-S/`, `tail-serial/`),
+each holding that marking's source scan, preview PNG, and cutting SVG(s)
+together. Loose top-level files not specific to one marking (`SCALE.md`)
+and unrelated asset dirs (`imodeler-build-photos/`) stay at the top level.
+Any SVG meant to go to the cutter gets a `-for-cutting` suffix, styled
+`fill="none" stroke="#000000" stroke-width="0.1"`, to distinguish it from
+preview/comparison PNGs and older working files. Full rationale in the
+`feedback-resources-organization` and `feedback-comparison-images-show-dimensions`
+memory notes (auto-memory, not in this repo).
+
+**`masks/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg`** — one
+combined Silhouette-ready SVG with every E2-S marking laid out with gaps for
+easy selection: walkway guide (left only — mirror the other in Silhouette
+Studio), nose mask, E2-S serial, two stars-and-bars roundels (38.6mm and
+32.6mm), two masking rings (1.2mm and 1.3mm inner diameter, 2mm tape band),
+one tail serial number. Built by **`scripts/build-e2-s-cut-sheet.py`** —
+re-run that script after changing anything (item sizes, gaps, which files
+are included) rather than hand-editing the generated SVG; the tweakable
+constants (`GAP`, `MARGIN`, `ROUNDEL_WIDTHS_MM`,
+`RING_INNER_DIAMETERS_MM`, etc.) are at the top of the script.
+
+**Stars-and-bars / national-insignia cutting method**: converting a
+color-filled reference insignia (overlapping solid shapes, e.g.
+`masks/common/insignia/us-roundel-b-1943-1947/us-roundel-b-1943-1947-wikimedia.svg`)
+into cut lines for a single-sheet "cut once, peel each region to spray its
+color" paint mask must NOT just strip fill and keep each shape's raw
+outline — overlapping shapes leave lines cutting through the middle of
+single-color regions (confirmed wrong on this project: bar lines cut
+through the star). Instead compute the exact boolean geometry of each final
+color region in paint order with Shapely (union/difference), giving one
+outer boundary plus holes only where the color actually changes. The
+derived `us-roundel-b-1943-1947-for-cutting.svg` lives alongside the
+wikimedia master in the same `masks/common/insignia/` folder (documented in
+that folder's README) so it's reusable across projects, not rebuilt per cut
+sheet. Full method in the `feedback-insignia-cutline-method` memory note.
+
+**Known stale reference**: `scripts/generate-e2-s-svgs.py`'s `OUT_DIR`
+points at `masks/projects/bottisham-four/E2-S/svg/`, which no longer exists
+after the resources reorganization above — that script would fail if
+re-run as-is. Not fixed yet since it wasn't touched this session; update
+its `OUT_DIR` (and check `scripts/split-e2-s-svg.py` and
+`scripts/trace-tail-serial.py` for the same issue) before relying on it
+again.
+
+**Cutting happens on Windows, not here**: Silhouette Studio only runs
+booted into Windows on the dual-boot machine (see the Windows-partition
+note below) — this Claude Code session only produces/edits the SVGs on the
+Ubuntu side. Nothing in this repo drives the cutter directly.
+
 ## Setup checklist for a new machine (Claude: run this at the start of a
 ## session if things look uninitialized — no .venv, no fonts symlink, etc.)
 
