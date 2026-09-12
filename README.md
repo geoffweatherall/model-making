@@ -3,6 +3,19 @@
 Producing SVG cut files for a Silhouette Portrait 3, used to cut masks for
 painting scale models.
 
+## Cutting
+
+**[masks/cut-settings.md](masks/cut-settings.md) — cutter settings and
+material choice.** Confirmed blade depth/force/speed/passes per material and
+item type, why one masking material is chosen over another, and the failure
+modes worth knowing about before starting a cut.
+
+The short version: **Oramask 810** (depth=1, force=10, speed=1, passes=1) for
+anything with fine detail, and for general use; **Tamiya 87130** kabuki sheet
+(depth=2, force=6, speed=1, passes=1) where a mask has to conform over
+compound curves, but only for large, simple shapes — it can't hold small
+lettering.
+
 ## Software requirements
 
 This table is kept current as the single source of truth for what needs to
