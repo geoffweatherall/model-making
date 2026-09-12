@@ -5,4 +5,6 @@
 - [Pedantic naming](feedback_pedantic_naming.md) — verify a name is technically/historically accurate before using it, don't default to the colloquial first-guess
 - [Resources folder organization](feedback_resources_organization.md) — per-marking subfolders under resources/, cutting SVGs get a `-for-cutting` suffix
 - [Insignia cut-line method](feedback_insignia_cutline_method.md) — use Shapely boolean geometry (not raw outline overlay) to convert color-filled insignia SVGs to mask cut lines
-- [Tamiya masking cut settings](project_tamiya_masking_cut_settings.md) — Portrait 3 + AutoBlade: depth=2 (max), force=3, speed=1
+- [Tamiya masking cut settings](project_tamiya_masking_cut_settings.md) — pointer: real log now lives in repo's masks/cut-settings.md
+- [Scope cut-result claims](feedback_cut_results_scope_claims.md) — only log a setting as confirmed for the elements actually seen to cut cleanly
+- [Concise reference docs](feedback_concise_reference_docs.md) — lead with key points; compress resolved failures to range + why, not per-attempt logs
