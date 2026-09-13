@@ -13,7 +13,7 @@ straight-line chamfers), check whether a font file already matches the
 style before hand-building centerline geometry (bezier/spline waypoints,
 arc parameters, etc.) from visual judgement.
 
-**Why:** for the E2-S tail serial digits ([[model-masks]] project,
+**Why:** for the E2-S tail serial digits ([[model-making]] project,
 2026-08-20/21), hand-building each digit's curves from scratch (two
 different approaches: full parametric redesign, and a targeted hybrid) took
 substantial iteration and both were explicitly rejected by the user as "a

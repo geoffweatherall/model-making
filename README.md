@@ -1,7 +1,14 @@
-# model-masks
+# model-making
 
-Producing SVG cut files for a Silhouette Portrait 3, used to cut masks for
-painting scale models.
+Reference material and tooling for scale-model building generally. Currently
+this covers producing SVG cut files for a Silhouette Portrait 3, used to cut
+masks for painting scale models — see `masks/` below — with room for other
+model-making work as it's added.
+
+## Projects
+
+Per-subject build/reference folders live in [projects/](projects/), one
+subdirectory per subject — e.g. [projects/bottisham-four/](projects/bottisham-four/).
 
 ## Cutting
 

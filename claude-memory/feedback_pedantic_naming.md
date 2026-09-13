@@ -14,7 +14,7 @@ specific historical/technical identity, verify that before naming a
 file/folder/variable after it — don't default to the colloquial or
 first-guess name.
 
-**Why:** user said explicitly (2026-08-21, [[model-masks]] insignia work)
+**Why:** user said explicitly (2026-08-21, [[model-making]] insignia work)
 "I like to be pedantic and get naming correct." Concretely: they caught
 themselves about to name a WWII US national aircraft insignia folder
 `usaaf-1943`, then asked for research first — turned out the insignia

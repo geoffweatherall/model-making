@@ -13,12 +13,12 @@ import numpy as np
 from fontTools.ttLib import TTFont
 from fontTools.pens.boundsPen import BoundsPen
 
-REPO = "/home/geoff/Projects/model-masks-workspace/model-masks"
-DECAL_IMG = f"{REPO}/masks/projects/bottisham-four/E2-S/resources/decal-e2-s-code.png"
+REPO = "/home/geoff/projects/model-making-workspace/model-making"
+DECAL_IMG = f"{REPO}/projects/bottisham-four/E2-S/resources/decal-e2-s-code.png"
 # amarillo-usaf.ttf is registered shareware, not clearly open, so it lives in
-# the private sibling repo, not this one - see model-masks/CLAUDE.md
-FONT_PATH = "/home/geoff/Projects/model-masks-workspace/model-fonts/fonts-proprietary/amarillo-usaf.ttf"
-OUT_DIR = f"{REPO}/masks/projects/bottisham-four/E2-S/svg"
+# the private sibling repo, not this one - see model-making/CLAUDE.md
+FONT_PATH = "/home/geoff/projects/model-making-workspace/model-fonts/fonts-proprietary/amarillo-usaf.ttf"
+OUT_DIR = f"{REPO}/projects/bottisham-four/E2-S/svg"
 CANONICAL_HEIGHT_MM = 11.5
 MARGIN_MM = 1.5
 

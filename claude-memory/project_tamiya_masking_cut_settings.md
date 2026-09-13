@@ -10,7 +10,7 @@ metadata:
 
 Cut settings (blade depth/force/speed/passes) and material choice for the
 Silhouette Portrait 3 + AutoBlade live in **`masks/cut-settings.md`** in the
-model-masks repo, linked from the top of its README. Don't keep numbers here.
+model-making repo, linked from the top of its README. Don't keep numbers here.
 
 **Why:** an earlier version of this note recorded specific Tamiya settings as
 confirmed, and they were wrong — repeated to the user as fact on 2026-09-12

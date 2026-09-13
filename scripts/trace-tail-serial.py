@@ -23,9 +23,9 @@ import tempfile
 import os
 import cv2
 
-REPO = "/home/geoff/Projects/model-masks-workspace/model-masks"
-SRC_PNG = f"{REPO}/masks/projects/bottisham-four/E2-S/resources/decal-tail-serial-413926.png"
-OUT_SVG = f"{REPO}/masks/projects/bottisham-four/E2-S/svg/tail-serial-413926-traced.svg"
+REPO = "/home/geoff/projects/model-making-workspace/model-making"
+SRC_PNG = f"{REPO}/projects/bottisham-four/E2-S/resources/decal-tail-serial-413926.png"
+OUT_SVG = f"{REPO}/projects/bottisham-four/E2-S/svg/tail-serial-413926-traced.svg"
 ROW_HEIGHT = 135          # crop out just the top instance of the two duplicate rows
 REF_SPAN_MM = 18.8        # user-measured: left edge of first digit to right edge of last
 CROP_MARGIN_PX = 3

@@ -11,9 +11,9 @@ kind of asymmetry a hand-tuned shape would.
 import re
 import math
 
-REPO = "/home/geoff/Projects/model-masks-workspace/model-masks"
-TRACED_SVG = f"{REPO}/masks/projects/bottisham-four/E2-S/svg/e2-s-traced.svg"
-OUT_SVG = f"{REPO}/masks/projects/bottisham-four/E2-S/svg/e2-s-regularized.svg"
+REPO = "/home/geoff/projects/model-making-workspace/model-making"
+TRACED_SVG = f"{REPO}/projects/bottisham-four/E2-S/svg/e2-s-traced.svg"
+OUT_SVG = f"{REPO}/projects/bottisham-four/E2-S/svg/e2-s-regularized.svg"
 
 CANONICAL_STROKE = 1.60   # mm - single stroke width forced across all letters
 RAIL_CLUSTER_TOL = 0.20   # mm - edges within this offset of each other share a rail

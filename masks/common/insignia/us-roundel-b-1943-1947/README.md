@@ -2,7 +2,7 @@
 
 The "star and bars" national insignia carried by US military aircraft from
 **14 August 1943 to 14 January 1947** — the version seen on [the Bottisham
-Four](../../projects/bottisham-four/) and all other US military aircraft of
+Four](../../../../projects/bottisham-four/) and all other US military aircraft of
 the period. US-specific: other Allied air forces (RAF, etc.) used their own
 national markings, not this one.
 

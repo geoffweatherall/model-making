@@ -1,6 +1,6 @@
 ---
 name: feedback-resources-organization
-description: "model-masks resources/ folder layout: one subfolder per decal/marking, and the -for-cutting suffix naming convention for SVGs meant to be cut"
+description: "model-making resources/ folder layout: one subfolder per decal/marking, and the -for-cutting suffix naming convention for SVGs meant to be cut"
 metadata: 
   node_type: memory
   type: feedback
@@ -9,7 +9,7 @@ metadata:
 ---
 
 In each project's `resources/` folder (e.g.
-`masks/projects/bottisham-four/E2-S/resources/`), organize files into one
+`projects/bottisham-four/E2-S/resources/`), organize files into one
 subfolder per decal/marking rather than a flat list or a separate top-level
 `svg/` folder. As of 2026-08-23 the subfolders in the E2-S example are:
 `nose/`, `walkway/`, `E2-S/`, `tail-serial/` — named after the marking they

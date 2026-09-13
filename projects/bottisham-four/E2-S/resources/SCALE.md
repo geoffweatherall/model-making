@@ -83,7 +83,7 @@ curves from visual judgement alone did not work well here.
 
 **`tail-serial-413926-font.svg`** — the font `usaaf-serial-stencil.ttf`
 (now in the private `model-fonts` sibling repo's `fonts-proprietary/` -
-"free for personal use" only, not clearly open, see `model-masks/CLAUDE.md`)
+"free for personal use" only, not clearly open, see `model-making/CLAUDE.md`)
 already has clean, correctly-designed stencil digits (constant stroke
 width, proper gaps, by construction) - using it directly was a far better
 result than hand-building geometry. Reuses the calibration and sizing already

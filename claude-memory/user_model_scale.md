@@ -17,6 +17,6 @@ one like 1/72.
 reference surface during Bottisham Four research — stated preference,
 not inferred.
 
-**How to apply:** applies across [[model-masks]] project work generally —
+**How to apply:** applies across [[model-making]] project work generally —
 mask cutting, kit reference searches, model subject research — not just the
 Bottisham Four task it came up in.

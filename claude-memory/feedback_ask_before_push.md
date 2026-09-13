@@ -12,7 +12,7 @@ Never run `git push` (or any command that publishes commits to a remote)
 without asking the user first, even after they've approved a commit.
 
 **Why:** user explicitly said, right after approving a commit in
-model-masks, "you should ask me before making pushes to the repo" —
+model-making, "you should ask me before making pushes to the repo" —
 approval to commit is not approval to push. This is a general collaboration
 preference, not scoped to one repo.
 

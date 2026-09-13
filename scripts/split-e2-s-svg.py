@@ -5,9 +5,9 @@ aircraft's own call letter, independent). Each gets its own mm-sized
 canvas so it can be imported into Silhouette Studio on its own."""
 import re
 
-REPO = "/home/geoff/Projects/model-masks-workspace/model-masks"
-SRC = f"{REPO}/masks/projects/bottisham-four/E2-S/svg/e2-s-regularized.svg"
-SVG_DIR = f"{REPO}/masks/projects/bottisham-four/E2-S/svg"
+REPO = "/home/geoff/projects/model-making-workspace/model-making"
+SRC = f"{REPO}/projects/bottisham-four/E2-S/svg/e2-s-regularized.svg"
+SVG_DIR = f"{REPO}/projects/bottisham-four/E2-S/svg"
 MARGIN_MM = 1.5
 
 svg = open(SRC).read()

@@ -1,6 +1,6 @@
 ---
 name: feedback-comparison-images-show-dimensions
-description: "Conventions for scan-vs-SVG preview/comparison images in model-masks: dimension lines, numbered vertices, legend placement, before/after diffing"
+description: "Conventions for scan-vs-SVG preview/comparison images in model-making: dimension lines, numbered vertices, legend placement, before/after diffing"
 metadata: 
   node_type: memory
   type: feedback
@@ -9,7 +9,7 @@ metadata:
 ---
 
 When producing a preview/comparison image overlaying a traced/generated SVG
-outline on the reference photo/scan (e.g. [[model-masks]] decal tracing
+outline on the reference photo/scan (e.g. [[model-making]] decal tracing
 work), apply all of the following:
 
 1. **Dimension line for the calibration measurement.** Show the actual

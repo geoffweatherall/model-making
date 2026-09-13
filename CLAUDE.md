@@ -15,8 +15,10 @@ and across machines (this repo is git-synced between two of the user's machines)
 
 ## Project
 
-Producing SVG files for a Silhouette Portrait 3 cutter, used to cut masks for
-painting scale models.
+Scale-model building reference and tooling generally. Currently centered on
+producing SVG files for a Silhouette Portrait 3 cutter, used to cut masks for
+painting scale models (see `masks/`), with other model-making project types
+expected under `projects/` over time.
 
 ## Why Claude Code (not browser Claude)
 
@@ -41,7 +43,7 @@ the user's real machine, so anything installed there (apt packages, fonts via
   utilities, etc.) rather than waiting to be asked.
 - **Inkscape** (installed 2026-08-20, v1.4.3) works both headful (normal GUI,
   picks up fonts via the `~/.local/share/fonts/model-fonts-proprietary` (and,
-  once it exists, `model-masks`) symlink(s) — see Fonts section) and
+  once it exists, `model-making`) symlink(s) — see Fonts section) and
   headless via CLI (`inkscape in.svg --export-type=png
   --export-filename=out.png`, or `--actions=...` for scripted path ops) —
   confirmed working even with `DISPLAY`/`WAYLAND_DISPLAY` unset, no Xvfb
@@ -61,7 +63,7 @@ the user's real machine, so anything installed there (apt packages, fonts via
 
 ## Fonts (split across two repos — read this before adding or looking for any font)
 
-**model-masks will go public; a sibling repo, `model-fonts`, stays private.**
+**model-making will go public; a sibling repo, `model-fonts`, stays private.**
 Font files are split between them by license status, so no copyrighted font
 software ends up in the public repo:
 
@@ -73,7 +75,7 @@ software ends up in the public repo:
   genuinely open-licensed font is actually added.
 - **`../model-fonts/fonts-proprietary/`** (sibling repo, private, expected
   to already be cloned alongside this one at
-  `/home/geoff/Projects/model-masks-workspace/model-fonts`) — everything
+  `/home/geoff/projects/model-making-workspace/model-fonts`) — everything
   else: shareware, "personal use only", "all rights reserved" with no
   redistribution grant, or no license info found at all. **When unsure,
   it goes here, not in `fonts-open/`** — that's a deliberate standing rule
@@ -112,7 +114,7 @@ ln -sfn "$(pwd)/../model-fonts/fonts-proprietary" ~/.local/share/fonts/model-fon
 fc-cache -f ~/.local/share/fonts
 ```
 
-(Add `ln -sfn "$(pwd)/fonts-open" ~/.local/share/fonts/model-masks` too, once
+(Add `ln -sfn "$(pwd)/fonts-open" ~/.local/share/fonts/model-making` too, once
 `fonts-open/` actually exists and has something in it.)
 
 Verify with `fc-list | grep -iE "amarillo|blockschrift|raf_ww2|universj|usaaf|usn_stencil"`
@@ -128,7 +130,7 @@ rather than copying means future additions to either `fonts-open/` or
 ## Bottisham Four / E2-S — cut sheet work (as of 2026-08-23)
 
 Per-project `resources/` folders (e.g.
-`masks/projects/bottisham-four/E2-S/resources/`) are organized into one
+`projects/bottisham-four/E2-S/resources/`) are organized into one
 subfolder per decal/marking (`nose/`, `walkway/`, `E2-S/`, `tail-serial/`),
 each holding that marking's source scan, preview PNG, and cutting SVG(s)
 together. Loose top-level files not specific to one marking (`SCALE.md`)
@@ -140,7 +142,7 @@ preview/comparison PNGs and older working files. Full rationale in the
 memory notes (see `claude-memory/` in this repo's root — auto-memory is
 git-synced here, see the section below).
 
-**`masks/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg`** — one
+**`projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg`** — one
 combined Silhouette-ready SVG with every E2-S marking laid out with gaps for
 easy selection: walkway guide (left only — mirror the other in Silhouette
 Studio), nose mask, E2-S serial, two stars-and-bars roundels (38.6mm and
@@ -167,7 +169,7 @@ that folder's README) so it's reusable across projects, not rebuilt per cut
 sheet. Full method in the `feedback-insignia-cutline-method` memory note.
 
 **Known stale reference**: `scripts/generate-e2-s-svgs.py`'s `OUT_DIR`
-points at `masks/projects/bottisham-four/E2-S/svg/`, which no longer exists
+points at `projects/bottisham-four/E2-S/svg/`, which no longer exists
 after the resources reorganization above — that script would fail if
 re-run as-is. Not fixed yet since it wasn't touched this session; update
 its `OUT_DIR` (and check `scripts/split-e2-s-svg.py` and
@@ -183,8 +185,8 @@ Ubuntu side. Nothing in this repo drives the cutter directly.
 
 Claude Code's auto-memory (preference/feedback notes it saves across
 sessions) normally lives at
-`~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory/` —
-tied to this session's working directory (the `model-masks-workspace`
+`~/.claude/projects/-home-geoff-Projects-model-making-workspace/memory/` —
+tied to this session's working directory (the `model-making-workspace`
 folder, launched one level above this repo), and **local to whichever
 machine wrote it**, not git-synced by default. Since the user works from
 this same workspace path on two Ubuntu machines that aren't always on
@@ -193,8 +195,8 @@ syncs everything else via this repo's git remote, memory is synced the
 same way:
 
 - The actual memory files live in **`claude-memory/`** in this repo (i.e.
-  `model-masks/claude-memory/`), git-tracked like everything else.
-- `~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory`
+  `model-making/claude-memory/`), git-tracked like everything else.
+- `~/.claude/projects/-home-geoff-Projects-model-making-workspace/memory`
   is a **symlink** to that folder, not a real directory — so Claude's
   memory tool reads/writes the repo files directly with no extra step.
 - **On a new/other machine**, after cloning this repo, recreate the
@@ -202,10 +204,10 @@ same way:
   first run there creates the parent `projects/...` folder — create it
   if needed):
   ```
-  mkdir -p ~/.claude/projects/-home-geoff-Projects-model-masks-workspace
-  rm -rf ~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory   # only if it exists and is a real (non-symlink) dir - check first, don't blindly delete existing memory
-  ln -s /home/geoff/Projects/model-masks-workspace/model-masks/claude-memory \
-        ~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory
+  mkdir -p ~/.claude/projects/-home-geoff-Projects-model-making-workspace
+  rm -rf ~/.claude/projects/-home-geoff-Projects-model-making-workspace/memory   # only if it exists and is a real (non-symlink) dir - check first, don't blindly delete existing memory
+  ln -s /home/geoff/Projects/model-making-workspace/model-making/claude-memory \
+        ~/.claude/projects/-home-geoff-Projects-model-making-workspace/memory
   ```
 - This repo is **public** (see top of this file) — `claude-memory/`
   content goes public with it. Nothing saved there so far is sensitive
@@ -233,7 +235,7 @@ same way:
 5. Repo may have uncommitted changes carried over via git — check `git
    status` before assuming a clean tree.
 6. Claude memory symlink — check whether
-   `~/.claude/projects/-home-geoff-Projects-model-masks-workspace/memory`
+   `~/.claude/projects/-home-geoff-Projects-model-making-workspace/memory`
    is already a symlink to `claude-memory/` in this repo (`ls -la` on its
    parent dir). If it's missing or is a real directory instead of a
    symlink, see the "Claude Code memory syncing across machines" section

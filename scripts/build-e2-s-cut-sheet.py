@@ -5,7 +5,7 @@ with gaps between items so they're easy to select individually in Silhouette
 Studio. Re-run this after changing any ITEM below (sizes, gaps, which source
 files are included) rather than hand-editing the generated SVG.
 
-Output: masks/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg
+Output: projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg
 
 Items on the sheet (edit the constants below to tweak):
   - walkway guide (left; mirror it in Silhouette Studio for the right one)
@@ -17,18 +17,18 @@ Items on the sheet (edit the constants below to tweak):
 
 All source SVGs are expected to already be real-world mm size and to use
 the project's cutting convention: fill="none" stroke="#000000"
-stroke-width="0.1" (see model-masks/CLAUDE.md and the
+stroke-width="0.1" (see model-making/CLAUDE.md and the
 feedback-resources-organization / feedback-comparison-images-show-dimensions
 / feedback-insignia-cutline-method memory notes for the conventions this
 script follows).
 """
 import re
 
-REPO = "/home/geoff/Projects/model-masks-workspace/model-masks"
-BASE = f"{REPO}/masks/projects/bottisham-four/E2-S/resources"
+REPO = "/home/geoff/projects/model-making-workspace/model-making"
+BASE = f"{REPO}/projects/bottisham-four/E2-S/resources"
 ROUNDEL_MASTER = (f"{REPO}/masks/common/insignia/us-roundel-b-1943-1947/"
                    "us-roundel-b-1943-1947-for-cutting.svg")
-OUT_PATH = f"{REPO}/masks/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg"
+OUT_PATH = f"{REPO}/projects/bottisham-four/E2-S/cut-sheet-for-cutting.svg"
 
 # ---------------------------------------------------------------------------
 # Tweakable parameters
